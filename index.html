@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="./img/logo.png" class="logo" alt="logo" /></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="./index.html">Hom</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a class="active" href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="hero">
+      <h4>Trustfull..😁</h4>
+      <h2>Best Prices</h2>
+      <h1>Find all what you want</h1>
+      <p>Don't miss chance to try out ..🙃</p>
+      <button>Shop Now</button>
+    </section>
+
+    <!-- The below section is written in normal HTML and as u can see it is repeated, 
+    but it can be generated dynamically using JavaScript as shown in the script below.. -->
+
+    <!-- <section id="feature" class="section-p1">
+      <div class="feature-box">
+        <img src="./img/features/f1.png" alt="" />
+        <h6>Free Shipping</h6>
+      </div>
+      <div class="feature-box">
+        <img src="./img/features/f2.png" alt="" />
+        <h6>Online order</h6>
+      </div>
+      <div class="feature-box">
+        <img src="./img/features/f3.png" alt="" />
+        <h6>Keeping Money</h6>
+      </div>
+      <div class="feature-box">
+        <img src="./img/features/f4.png" alt="" />
+        <h6>Gifts</h6>
+      </div>
+      <div class="feature-box">
+        <img src="./img/features/f5.png" alt="" />
+        <h6>Good Sells</h6>
+      </div>
+      <div class="feature-box">
+        <img src="./img/features/f6.png" alt="" />
+        <h6>Support</h6>
+      </div>
+    </section> -->
+
+    <!-- This is the section where we will dynamically add the features using JavaScript..
+    That means .. this section will be filled by the script bellow.. -->
+    <section id="feature" class="section-p1"></section>
+
+    <section id="product1" class="section-p1">
+      <h2>Our Products</h2>
+      <p>Fantastic and modern design</p>
+      <div class="product-container">
+        <div class="product">
+          <img src="./img/products/f1.jpg" alt="product" />
+          <div class="description">
+            <span>adidas</span>
+            <h5>asdfjkhf</h5>
+            <div id="star" class="star"></div>
+            <div class="Prices-cart">
+              <h4>$ 78</h4>
+
+              <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script for features section.. -->
+    <script>
+      const features = [
+        { img: "./img/features/f1.png", text: "Free Shipping" },
+        { img: "./img/features/f2.png", text: "Online order" },
+        { img: "./img/features/f3.png", text: "Keeping Money" },
+        { img: "./img/features/f4.png", text: "Gifts" },
+        { img: "./img/features/f5.png", text: "Good Sells" },
+        { img: "./img/features/f6.png", text: "Support" },
+      ];
+
+      const section = document.getElementById("feature");
+
+      features.forEach((feature) => {
+        section.innerHTML += `
+      <div class="feature-box">
+        <img src="${feature.img}" alt="" />
+        <h6 >${feature.text}</h6>
+      </div>
+    `;
+      });
+    </script>
+
+    <!-- Script for star dvi.. -->
+    <script>
+      const star = document.getElementById("star");
+
+      let starsHTML = "";
+
+      for (let i = 0; i < 5; i++) {
+        starsHTML += `<i class="fa-solid fa-star"></i>`;
+      }
+
+      star.innerHTML = starsHTML;
+    </script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
