@@ -18,7 +18,7 @@
       <div>
         <ul id="navbar">
           <li><a href="./index.html">Hom</a></li>
-          <li><a class="active" href="#">Shop</a></li>
+          <li><a class="active" href="./shop.html">Shop</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
@@ -102,6 +102,65 @@
       </div>
     </section>
 
+    <section id="product1" class="section-p1">
+      <h2>Feature Products</h2>
+      <p>Summer Collection New Modern Design.</p>
+      <div class="product-container">
+        <div class="product">
+          <img src="./img/products/n1.jpg" alt="product" />
+          <div class="description">
+            <span>adidas</span>
+            <h5>asdfjkhf</h5>
+            <div id="star" class="star"></div>
+            <div class="Prices-cart">
+              <h4>$ 78</h4>
+
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <img src="./img/products/n2.jpg" alt="product" />
+          <div class="description">
+            <span>adidas</span>
+            <h5>asdfjkhf</h5>
+            <div id="star" class="star"></div>
+            <div class="Prices-cart">
+              <h4>$ 78</h4>
+
+              <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <img src="./img/products/n3.jpg" alt="product" />
+          <div class="description">
+            <span>adidas</span>
+            <h5>asdfjkhf</h5>
+            <div id="star" class="star"></div>
+            <div class="Prices-cart">
+              <h4>$ 78</h4>
+
+              <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="product">
+          <img src="./img/products/n4.jpg" alt="product" />
+          <div class="description">
+            <span>adidas</span>
+            <h5>asdfjkhf</h5>
+            <div id="star" class="star"></div>
+            <div class="Prices-cart">
+              <h4>$ 78</h4>
+
+              <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="newsletter" class="section-p1 section-m1">
       <div class="newstext">
         <h4>Sign Up For Newsletters</h4>
@@ -167,15 +226,28 @@
 
     <!-- Script for star dvi.. -->
     <script>
-      const star = document.getElementById("star");
-
+      const star = document.getElementsByClassName("star");
       let starsHTML = "";
 
-      for (let i = 0; i < 5; i++) {
-        starsHTML += `<i class="fa-solid fa-star"></i>`;
+      for (let i = 0; i < star.length; i++) {
+        for (let j = 0; j < 5; j++) {
+          starsHTML += `<i class="fa-solid fa-star"></i>`;
+        }
+        star[i].innerHTML = starsHTML;
+        starsHTML = "";
       }
+    </script>
 
-      star.innerHTML = starsHTML;
+    <!-- Script for making our Callery -->
+    <script>
+      var mainImage = document.getElementById("main-image");
+      var smallImage = document.getElementsByClassName("small-image");
+
+      for (let i = 0; i < smallImage.length; i++) {
+        smallImage[i].onclick = function () {
+          mainImage.src = smallImage[i].src;
+        };
+      }
     </script>
 
     <script src="./script.js"></script>

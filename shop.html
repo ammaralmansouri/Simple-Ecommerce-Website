@@ -324,15 +324,17 @@
 
     <!-- Script for star dvi.. -->
     <script>
-      const star = document.getElementById("star");
+      const star = document.getElementsByClassName("star");
 
       let starsHTML = "";
 
-      for (let i = 0; i < 5; i++) {
-        starsHTML += `<i class="fa-solid fa-star"></i>`;
+      for (let i = 0; i < star.length; i++) {
+        for (let j = 0; j < 5; j++) {
+          starsHTML += `<i class="fa-solid fa-star"></i>`;
+        }
+        star[i].innerHTML = starsHTML;
+        starsHTML = "";
       }
-
-      star.innerHTML = starsHTML;
     </script>
 
     <script src="./script.js"></script>
